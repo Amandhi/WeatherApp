@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  We use a scrollview as a root element because we are not sure about the height
+  taken by the "about" widget
+-->
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true"
+  tools:context=".CityDetailActivity"
+  >
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    >
+
+
+    <TextView
+      android:id="@+id/name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+
+      android:textSize="50sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+        android:text="City :"
+        android:textColor="#000"
+
+      />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:text="Temperature :"
+        android:textColor="#000"
+
+        />
+
+    <TextView
+        android:id="@+id/temperature_min"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperature"
+        android:text="Min :"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:id="@+id/temperature_max"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperature_min"
+        android:text="Max :"
+        android:textColor="#000"
+        />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
