@@ -3,18 +3,10 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   >
-  <!--
-  we add a first item which is hidden by default
--->
-  <item
-    android:id="@+id/profile"
-    android:icon="@drawable/ic_baseline_person_24"
-    android:title="@string/my_profile"
-    app:showAsAction="ifRoom"
-    />
+
 
   <!--
-    we add a second item which is hidden by default
+    we add an item which is hidden by default
   -->
   <item
       android:id="@+id/delete"

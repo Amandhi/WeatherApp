@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import fr.efrei.tp1.adapter.CitiesAdapter;
 import fr.efrei.tp1.bo.City;
-import fr.efrei.tp1.repository.UserRepository;
+import fr.efrei.tp1.repository.CityRepository;
 
 final public class CitiesActivity
     extends AppCompatActivity
@@ -40,10 +40,11 @@ final public class CitiesActivity
     //We first set up the layout linked to the activity
     setContentView(R.layout.activity_cities);
 
+    //Then we retrieved the widget
     recyclerView = findViewById(R.id.recyclerView);
     recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-    //We configure the click on the fab
+    //We configure the click on the floating button
     findViewById(R.id.fab).setOnClickListener(this);
   }
 
@@ -62,18 +63,18 @@ final public class CitiesActivity
 
   private void initList()
   {
-    //We retrieve the list of users to display
-    final List<City> cities = currentOrderState == OrderState.NotOrder ? UserRepository.getInstance(this).getCity() : UserRepository.getInstance(this).sortCitiesByName();
+    //We retrieve the list of cities to display
+    final List<City> cities = currentOrderState == OrderState.NotOrder ? CityRepository.getInstance(this).getCities() : CityRepository.getInstance(this).sortCitiesByName();
 
     //We create the adapter and we attach it to the RecyclerView
-    final CitiesAdapter usersAdapter = new CitiesAdapter(cities);
-    recyclerView.setAdapter(usersAdapter);
+    final CitiesAdapter citiesAdapter = new CitiesAdapter(cities);
+    recyclerView.setAdapter(citiesAdapter);
   }
 
   @Override
   public void onClick(View v)
   {
-    //We open the AddUserActivity screen when the user clicks on the FAB
+    //We open the FinalAddCityActivity screen when the user clicks on the floating button
     final Intent intent = new Intent(this, FinalAddCityActivity.class);
     startActivity(intent);
   }

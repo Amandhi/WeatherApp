@@ -10,21 +10,21 @@ import fr.efrei.tp1.bo.City;
 import fr.efrei.tp1.database.CityDatabase;
 
 //This class implement the singleton pattern
-public final class UserRepository
+public final class CityRepository
 {
 
-  private static volatile UserRepository instance;
+  private static volatile CityRepository instance;
 
   // We accept the "out-of-order writes" case
-  public static UserRepository getInstance(Context context)
+  public static CityRepository getInstance(Context context)
   {
     if (instance == null)
     {
-      synchronized (UserRepository.class)
+      synchronized (CityRepository.class)
       {
         if (instance == null)
         {
-          instance = new UserRepository(context);
+          instance = new CityRepository(context);
         }
       }
     }
@@ -34,29 +34,29 @@ public final class UserRepository
 
   private final CityDatabase cityDatabase;
 
-  private UserRepository(Context context)
+  private CityRepository(Context context)
   {
     cityDatabase = Room.databaseBuilder(context, CityDatabase.class, "city-database").allowMainThreadQueries().build();
   }
 
-  public List<City> getCity()
+  public List<City> getCities()
   {
-    return cityDatabase.userDao().getUsers();
+    return cityDatabase.userDao().getCities();
   }
 
-  public void deleteCity(City user)
+  public void deleteCity(City city)
   {
-    cityDatabase.userDao().deleteUser(user);
+    cityDatabase.userDao().deleteCity(city);
   }
 
-  public void addCity(City user)
+  public void addCity(City city)
   {
-    cityDatabase.userDao().addUser(user);
+    cityDatabase.userDao().addCity(city);
   }
 
   public List<City> sortCitiesByName()
   {
-    return cityDatabase.userDao().sortUsersByName();
+    return cityDatabase.userDao().sortCitiesByName();
   }
 
 }

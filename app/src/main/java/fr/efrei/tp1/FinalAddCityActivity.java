@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import fr.efrei.tp1.bo.City;
 import fr.efrei.tp1.preferences.AppPreferences;
-import fr.efrei.tp1.repository.UserRepository;
+import fr.efrei.tp1.repository.CityRepository;
 
 final public class FinalAddCityActivity
     extends AppCompatActivity
@@ -22,8 +22,8 @@ final public class FinalAddCityActivity
   //The tag used into this screen for the logs
   public static final String TAG = FinalAddCityActivity.class.getSimpleName();
 
-  private EditText loginEditText;
-  private EditText name;
+  //private EditText loginEditText;
+  private EditText CityName;
 
 
   @Override
@@ -33,7 +33,7 @@ final public class FinalAddCityActivity
     setContentView(R.layout.activity_final_add_city);
 
     //We retrieve the EditText References
-    loginEditText = findViewById(R.id.login);
+    CityName = findViewById(R.id.editTextCityName);
 
 
 
@@ -48,7 +48,7 @@ final public class FinalAddCityActivity
 
 
     //we first retrieve user's entries
-    final String cityName = name.getEditableText().toString();
+    final String cityName = CityName.getEditableText().toString();
 
     //We display the properties into the logcat
     //displayCitiesEntries(cityName);
@@ -76,9 +76,9 @@ final public class FinalAddCityActivity
   private void saveLogin()
   {
     //We save only if there is something to save
-    if (TextUtils.isEmpty(loginEditText.getText()) == false)
+    if (TextUtils.isEmpty(CityName.getText()) == false)
     {
-      AppPreferences.saveUserLogin(this, loginEditText.getText().toString());
+      AppPreferences.saveUserLogin(this, CityName.getText().toString());
     }
 
     //we return to the previous screen
@@ -87,18 +87,18 @@ final public class FinalAddCityActivity
 
   private void resetForm()
   {
-    name.setText(null);
+    CityName.setText(null);
 
   }
 
   private void saveCity(String cityName)
   {
-    UserRepository.getInstance(this).addCity(new City(cityName));
+    CityRepository.getInstance(this).addCity(new City(cityName));
   }
 
   private boolean checkFormEntries(String cityName)
   {
-    return TextUtils.isEmpty(cityName) == false == false;
+    return TextUtils.isEmpty(cityName) == false;
   }
 
   /*private void displayCitiesEntries(String cityName)

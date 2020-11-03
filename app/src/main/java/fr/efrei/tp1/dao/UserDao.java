@@ -18,18 +18,18 @@ public interface UserDao
 
   @Override
   @Query("SELECT * FROM City")
-  List<City> getUsers();
+  List<City> getCities();
 
   @Override
   @Delete
-  void deleteUser(City user);
+  void deleteCity(City city);
 
   @Override
   @Insert(onConflict = OnConflictStrategy.REPLACE)
-  void addUser(City user);
+  void addCity(City city);
 
   @Override
   @Query("SELECT * FROM City ORDER BY name DESC")
-  List<City> sortUsersByName();
+  List<City> sortCitiesByName();
 
 }

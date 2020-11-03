@@ -11,34 +11,34 @@ final public class UserServices
     implements IUserService
 {
 
-  private final List<City> users = new ArrayList<>();
+  private final List<City> cities = new ArrayList<>();
 
   @Override
-  public List<City> getUsers()
+  public List<City> getCities()
   {
-    return users;
+    return cities;
   }
 
   @Override
-  public void deleteUser(City user)
+  public void deleteCity(City city)
   {
-    users.remove(user);
+    cities.remove(city);
   }
 
   @Override
-  public void addUser(City user)
+  public void addCity(City city)
   {
-    users.add(user);
+    cities.add(city);
   }
 
   @Override
-  public List<City> sortUsersByName()
+  public List<City> sortCitiesByName()
   {
-    final List<City> sortedUsers = new ArrayList<>(users);
+    final List<City> sortedCities = new ArrayList<>(cities);
 
     //Collections.sort(sortedUsers, new UserComparator());
 
-    return sortedUsers;
+    return sortedCities;
   }
 
 }

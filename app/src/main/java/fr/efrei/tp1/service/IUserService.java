@@ -9,30 +9,30 @@ public interface IUserService
 {
 
   /**
-   * Get all users
+   * Get all cities
    *
    * @return {@link List}
    */
-  List<City> getUsers();
+  List<City> getCities();
 
   /**
-   * Deletes an user
+   * Delete a city
    *
-   * @param user
+   * @param city
    */
-  void deleteUser(City user);
+  void deleteCity(City city);
 
   /**
-   * Add an user
+   * Add a city
    *
-   * @param user
+   * @param city
    */
-  void addUser(City user);
+  void addCity(City city);
 
   /**
-   * Get all users sorted by name
+   * Get all cities sorted by name
    *
    * @return {@link List}
    */
-  List<City> sortUsersByName();
+  List<City> sortCitiesByName();
 }

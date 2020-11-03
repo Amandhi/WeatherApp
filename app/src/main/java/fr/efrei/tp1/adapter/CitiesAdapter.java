@@ -43,7 +43,7 @@ public final class CitiesAdapter
 
     public void update(final City city)
     {
-      //We update the UI binding the current user to the current item
+      //We update the UI binding the current city to the current item
       name.setText(city.name);
 
 

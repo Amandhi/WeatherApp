@@ -8,21 +8,22 @@
   android:padding="12dp"
   tools:context=".FinalAddCityActivity"
   >
-
+<!-- Instruction for the user to enter city of his/her choice -->
   <TextView
       android:id="@+id/textViewCity"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:hint="Enter the name of the city you want to add"
-      app:layout_constraintBottom_toTopOf="@id/login"
+      app:layout_constraintBottom_toTopOf="@id/editTextCityName"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_chainStyle="packed"
     />
 
+  <!-- Edittext for the user to input city name-->
   <EditText
-    android:id="@+id/login"
+    android:id="@+id/editTextCityName"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginBottom="36dp"
@@ -35,6 +36,7 @@
     app:layout_constraintVertical_chainStyle="packed"
     />
 
+  <!--  Save button for the user to save the city desired and check afterwards weather details -->
   <Button
     android:id="@+id/save"
     android:layout_width="wrap_content"
@@ -45,7 +47,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/login"
+    app:layout_constraintTop_toBottomOf="@id/editTextCityName"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
