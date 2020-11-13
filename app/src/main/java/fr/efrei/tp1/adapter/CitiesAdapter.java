@@ -54,9 +54,9 @@ public final class CitiesAdapter
         @Override
         public void onClick(View v)
         {
-          //We create the intent that display the UserDetailActivity.
-          //The current user is added as an extra
-          //The User class implement the "Serializable" interface so I can put the whole object as an extra
+          //We create the intent that display the CityDetailActivity.
+          //The current city is added as an extra
+          //The City class implement the "Serializable" interface so I can put the whole object as an extra
           final Intent intent = new Intent(itemView.getContext(), CityDetailActivity.class);
           intent.putExtra(CityDetailActivity.USER_EXTRA, city);
 

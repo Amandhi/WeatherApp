@@ -4,6 +4,12 @@ android {
   compileSdkVersion 30
   buildToolsVersion "30.0.2"
 
+// Enable the use of Java 8
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
   defaultConfig {
     applicationId "fr.efrei.tp1"
     minSdkVersion 21

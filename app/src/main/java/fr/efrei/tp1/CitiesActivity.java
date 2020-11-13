@@ -65,17 +65,22 @@ final public class CitiesActivity
   {
     //We retrieve the list of cities to display
     final List<City> cities = currentOrderState == OrderState.NotOrder ? CityRepository.getInstance(this).getCities() : CityRepository.getInstance(this).sortCitiesByName();
-
-    //We create the adapter and we attach it to the RecyclerView
     final CitiesAdapter citiesAdapter = new CitiesAdapter(cities);
     recyclerView.setAdapter(citiesAdapter);
+
+    //if that list is empty we call EmptyCityPage, to inform the user to add a city
+    final Intent intentHomePage = new Intent(this, EmptyCityPage.class);
+    if(cities.isEmpty()) {
+      startActivity(intentHomePage);
+    }
+
   }
 
   @Override
   public void onClick(View v)
   {
     //We open the FinalAddCityActivity screen when the user clicks on the floating button
-    final Intent intent = new Intent(this, FinalAddCityActivity.class);
+    final Intent intent = new Intent(this, AddCityActivity.class);
     startActivity(intent);
   }
 

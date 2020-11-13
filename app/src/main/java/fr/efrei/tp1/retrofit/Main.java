@@ -2,6 +2,8 @@ package fr.efrei.tp1.retrofit;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Main {
 
     @SerializedName("temp")
@@ -16,13 +18,16 @@ public class Main {
     @SerializedName("feels_like")
     double feels_like;
 
-    public double getFeels_like() {
-        return feels_like;
-    }
+   /* @SerializedName("icon")
+    List<String> icon;
 
-    public void setFeels_like(double feels_like) {
-        this.feels_like = feels_like;
-    }
+    public List<String> getIcon() { return icon; }
+
+    public void setIcon(String weather_icon) { this.icon = icon; }
+*/
+    public double getFeels_like() { return feels_like; }
+
+    public void setFeels_like(double feels_like) { this.feels_like = feels_like; }
 
     public double getTemp() { return temp; }
 
