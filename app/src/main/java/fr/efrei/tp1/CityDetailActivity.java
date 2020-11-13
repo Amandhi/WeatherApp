@@ -93,7 +93,6 @@ final public class CityDetailActivity
 
 
     // Call for method to display weather data on the page
-    //getWeatherData(name.toString());
     getWeatherData(city.name);
 
   }
@@ -111,7 +110,7 @@ final public class CityDetailActivity
   {
     name = findViewById(R.id.Cityname);
     String cityToDelete = name.getText().toString();
-    //String cityToDelete = name.toString();
+
     //We handle the click on a menu item
     if (item.getItemId() == R.id.delete)
     {
@@ -123,17 +122,9 @@ final public class CityDetailActivity
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                   // if user clicks on yes, the city will be deleted from the list
-                  //final String cityNametodelete = name.toString();
                   final City city = (City) getIntent().getSerializableExtra(CityDetailActivity.USER_EXTRA);
                   name.setText(city.name);
                   UserdeletesCity(city);
-
-
-
-                  //initList();
-
-                  //we return to the previous screen
-                  //onBackPressed();
                 }
               })
               .setNegativeButton("No", null) // Otherwise nothing happens
