@@ -30,4 +30,5 @@ The app also has a customized icon.
 * Add a city of your choice
 * View weather details (temperature, feels like, min tempreature , max temperature) of a city
 * Delete a city that has been added (with a warning pop up message customized for each city)
+* When deleting a city you come back to the home page which is either the list of your other added cities, or if that is list is empty the inital home page with a message telling you to add cities
 
