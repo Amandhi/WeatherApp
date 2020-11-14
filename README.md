@@ -1,6 +1,6 @@
 ## Mobile Development - Practical Work 4 : Weather App
 
-#### The above project contains the following java actvity :
+#### The above project contains the following java actvities :
 * EmptyCityPage : page which is displayed when the user first opens the app or when there are no cities added the user's preferences list. (information message and add button)
 * AddCityActivity : enables a user to add the city of his/her choice.
 * CityDetailActivity : enables the user to view a city’s weather details when he/she clicks on the city he/she added and enables the user to delete that city from his/her list (menu option and a pop up warning message ). 
@@ -8,7 +8,7 @@ This activity also contains the part of the code calling the API (open weather m
 * CitiesACtivity : enables to display the list of cities added by the user (contains also an add button).
 
 
-and contains the following xml layout :
+and contains the following xml layouts :
 * activity_empty_city_page.xml
 * activity_add_city.xml
 * activity_city_detail.xml
